@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define forn(i, n) for(int i = 0; i < int(n); ++i)
+#define for1(i, n) for(int i = 1; i <= int(n); ++i)
+#define ford(i, n) for(int i = int(n) - 1; i >= 0; --i)
+#define fore(i, l, r) for(int i = int(l); i < int(r); ++i)
+#define forit(i, v) for(typeof((v).begin()) i = (v).begin(); i != (v).end(); ++i)
+#define sz(v) int((v).size())
+#define all(v) (v).begin(), (v).end()
+#define pb push_back
+#define X first
+#define Y second
+#define mp make_pair
+typedef long long ll;
+typedef long double ld;
+int Factors(int n)
+{
+  int cnt=0;
+  for(int i=1;i*i<=n;i++)
+  {
+    if(n % i == 0){
+        cnt++;
+          
+          if(i!= n/i)
+          cnt++;
+    }
+ 
+  }
+  return cnt;
+}
+int main()
+{
+    int  n , X=0;
+    cin>>n;
+    char s[4];
+    forn(i,n)
+    {
+        cin>>s;
+        if(s[1]=='+'){
+            X++;
+        }
+        else
+        {
+        X--;
+        }
+    }
+    cout<<X;
+    return 0;
+}
